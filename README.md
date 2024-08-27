@@ -1,5 +1,4 @@
-
-# Repositorio General: ToDo List 
+# Repositorio General: ToDo List
 
 ## Índice de Contenidos
 1. [Descripción General](#descripción-general)
@@ -16,15 +15,15 @@
 ---
 
 ## Descripción General
-Esta es una aplicación web de lista de tareas (ToDo List) que permite a los usuarios crear, leer, actualizar y eliminar tareas. El proyecto está dividido en cuatro secciones principales: SQL, Astro.js, NestJS y JavaScript. Cada una de estas secciones se encuentra en su propio entorno, y la aplicación está desarrollada utilizando una base de datos PostgreSQL, Astro.js y Alpine.js para la interfaz de usuario, NestJS para la API del lado del servidor, y Tailwind CSS para el diseño gráfico.
+Esta es una aplicación web de lista de tareas (ToDo List) que permite a los usuarios crear, leer, actualizar y eliminar tareas. El proyecto está dividido en cuatro secciones principales: SQL, Astro.js, NestJS y JavaScript. Utiliza una base de datos PostgreSQL para la persistencia de datos, Astro.js para la interfaz de usuario con Tailwind CSS y Alpine.js, y NestJS para la API del lado del servidor.
 
 ## Estructura del Proyecto
-El proyecto está dividido en las siguientes carpetas:
+El proyecto está organizado en las siguientes carpetas:
 
-- `/sql/`: Contiene las sentencias SQL para la creación de la base de datos y la tabla, así como las consultas requeridas.
-- `/frontend/`: Contiene el código fuente del frontend, desarrollado en Astro.js.
-- `/backend/`: Contiene el código fuente de la API, desarrollada en NestJS.
-- `/scripts/`: Contiene el archivo `app.js` que maneja la lógica de los formularios y la gestión del CRUD utilizando Fetch API.
+- `/sql/`: Contiene las sentencias SQL para la configuración de la base de datos.
+- `/frontend/`: Contiene el código fuente del frontend, desarrollado con Astro.js.
+- `/backend/`: Contiene el código fuente de la API, desarrollada con NestJS.
+- `/scripts/`: Contiene el archivo `app.js` para la lógica de los formularios y la gestión del CRUD.
 
 ## Requisitos Previos
 - [Node.js](https://nodejs.org/en/) (versión 16 o superior)
@@ -36,7 +35,7 @@ El proyecto está dividido en las siguientes carpetas:
 ### Sección 1: SQL
 
 #### Descripción
-Esta sección cubre la configuración de la base de datos PostgreSQL, incluyendo la creación de la base de datos y la tabla `tasks`, así como la inserción de datos de ejemplo.
+Esta sección cubre la configuración de la base de datos PostgreSQL, incluyendo la creación de la base de datos y la tabla `tasks`.
 
 #### Pasos
 1. **Crear la Base de Datos**:
@@ -69,11 +68,10 @@ Esta sección cubre la configuración de la base de datos PostgreSQL, incluyendo
      SELECT * FROM tasks;
      ```
 
-
-### interfaz Astro.js
+### Sección 2: Astro.js
 
 #### Descripción
-Esta sección cubre el desarrollo de la interfaz de usuario utilizando Astro.js y Alpine.js para manejar la interactividad. Tailwind CSS se utiliza para estilizar la página.
+Esta sección cubre el desarrollo de la interfaz de usuario utilizando Astro.js y Alpine.js para manejar la interactividad, y Tailwind CSS para estilizar la página.
 
 #### Pasos
 1. **Instalar Dependencias**:
@@ -81,18 +79,32 @@ Esta sección cubre el desarrollo de la interfaz de usuario utilizando Astro.js 
      ```bash
      npm install
      ```
-2. **Iniciar el Servidor de Desarrollo**:
+2. **Configurar Tailwind CSS**:
+   - Ejecuta el siguiente comando para generar el archivo de configuración de Tailwind:
+     ```bash
+     pnpm astro add tailwind
+     npx tailwindcss init
+     ```
+3. **Iniciar el Servidor de Desarrollo**:
    - Ejecuta:
      ```bash
      npm run dev
      ```
-   - La aplicación estará disponible en `http://localhost:3000`.
+   - La aplicación estará disponible en `http://localhost:4321`.
 
+#### Archivo `app.js`
 
-### api : NestJS
+El archivo `app.js` maneja la lógica del lado del cliente para la gestión de tareas y la comunicación con la API de NestJS. Incluye:
+
+- **Manejo de Formularios**: Gestión de la lógica para añadir y editar tareas.
+- **CRUD de Tareas**: Implementa operaciones CRUD usando la Fetch API.
+- **Interacción con el Modal**: Abre y cierra el modal para agregar o editar tareas.
+- **Actualización Dinámica**: Actualiza la lista de tareas en la interfaz de usuario.
+
+### Sección 3: NestJS
 
 #### Descripción
-Esta sección cubre la creación de una API utilizando NestJS. La API permite realizar operaciones CRUD sobre las tareas.
+Esta sección cubre la creación de una API utilizando NestJS, que permite realizar operaciones CRUD sobre las tareas.
 
 #### Pasos
 1. **Instalar Dependencias**:
@@ -109,8 +121,7 @@ Esta sección cubre la creación de una API utilizando NestJS. La API permite re
      ```
    - La API estará disponible en `http://localhost:3000`.
 
-
-### manipulacion del DOM - JavaScript
+### Sección 4: JavaScript
 
 #### Descripción
 Esta sección cubre la manipulación del DOM y la comunicación con la API usando Fetch API en el archivo `app.js`.
@@ -132,3 +143,12 @@ Esta sección cubre la manipulación del DOM y la comunicación con la API usand
 - **Errores Comunes**: Verifica que los puertos configurados no estén en uso y que las variables de entorno estén correctamente configuradas.
 - **Transiciones y Mejoras**: Considera agregar transiciones CSS para mejorar la experiencia del usuario.
 
+## Documentación
+
+Para más detalles sobre las tecnologías utilizadas, consulta la documentación oficial:
+
+- [Astro.js](https://docs.astro.build/)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+- [Alpine.js](https://alpinejs.dev/start-here)
+- [NestJS](https://nestjs.com/)
+- [TypeORM](https://typeorm.io/)

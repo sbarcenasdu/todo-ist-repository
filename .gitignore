@@ -1,0 +1,45 @@
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración del editor
+*.log
+*.tmp
+*.swp
+*.swo
+*.swn
+*.sublime-project
+*.sublime-workspace
+
+# Ignorar archivos generados por herramientas de construcción
+node_modules/
+dist/
+build/
+coverage/
+
+# Ignorar archivos de configuración de entornos locales
+.env
+*.env.local
+*.env.*.local
+
+# Ignorar configuraciones y archivos temporales de IDEs
+.vscode/
+.idea/
+*.iml
+
+# Ignorar archivos de prueba de base de datos y migraciones
+*.sql
+*.sqlite
+*.db
+*.dump
+
+# Ignorar submódulos no inicializados
+frontend/
+backend/
+
+# Ignorar archivos de caché
+.cache/
+*.cache
+
+# Ignorar archivos de logs
+*.log
