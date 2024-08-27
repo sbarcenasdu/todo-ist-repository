@@ -1,0 +1,6 @@
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/sbarcenasdu/todo-list
+[submodule "backend"]
+	path = backend
+	url = https://github.com/sbarcenasdu/todo-list-api
